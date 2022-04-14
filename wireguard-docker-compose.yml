@@ -1,7 +1,7 @@
 ---
-    version: "2"
-    services:
-      openvpn-client:
+version: "2"
+services:
+    openvpn-client:
         image: ghcr.io/wfg/openvpn-client            # Image on Docker. Shoutout to yacht7
         container_name: openvpn-client
         cap_add:
