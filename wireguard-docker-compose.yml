@@ -1,5 +1,5 @@
 ---
-version: "2"
+version: "3"
 services:
     openvpn-client:
         image: ghcr.io/wfg/openvpn-client            # Image on Docker. Shoutout to yacht7
