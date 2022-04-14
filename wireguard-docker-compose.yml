@@ -1,5 +1,5 @@
 ---
-version: "3"
+version: "3.1"
 services:
     openvpn-client:
         image: ghcr.io/wfg/openvpn-client            # Image on Docker. Shoutout to yacht7
@@ -13,7 +13,7 @@ services:
         devices:
             - /dev/net/tun                      
         volumes:
-            - /Volumes/Luigi/docker/mullvadVPN/config/mullvad_config_linux_ch_zrh:/data/vpn   
+            - /dockervolumes/wireguard/data/config/wireguard/:/data/vpn   
             # File unzipped before from Mullvad, it's location. Make sure to keep the ":/data/vpn" part at the end
         ports:
             - 5665:5665                         # Opening port for to access hypothetical Transmission container that would be routing through this VPN
