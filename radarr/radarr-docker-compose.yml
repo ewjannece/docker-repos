@@ -4,10 +4,10 @@ services:
     restart: unless-stopped
     ports:
       - 7878:7878
-    #volumes:
-    #  - /mnt/docker/radarr/config:/config
-    #- <\path/to/movies>:/movies
-    #- <\path/to/downloadclient-downloads>:/downloads
+    volumes:
+      - /mnt/docker/radarr/config:/config
+      - /mnt/docker/radarr/movies:/movies
+      - /mnt/docker/radarr/downloads:/downloads
     environment:
       - PUID=1000
       - PGID=1000
