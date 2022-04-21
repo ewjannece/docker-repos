@@ -6,7 +6,7 @@ services:
       - 7887:7878
     volumes:
       - /mnt/docker/radarr/config:/config
-      - /mnt/docker/radarr/movies:/movies
+      - /media/NAS/Movies-docker:/movies
       - /mnt/docker/radarr/downloads:/downloads
     environment:
       - PUID=1000
