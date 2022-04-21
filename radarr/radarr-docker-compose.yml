@@ -4,8 +4,8 @@ services:
     restart: unless-stopped
     ports:
       - 7878:7878
-    volumes:
-      - /mnt/docker/radarr/config:/config
+    #volumes:
+    #  - /mnt/docker/radarr/config:/config
     #- <\path/to/movies>:/movies
     #- <\path/to/downloadclient-downloads>:/downloads
     environment:
