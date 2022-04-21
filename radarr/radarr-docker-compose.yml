@@ -1,15 +1,15 @@
 version: '3'
 services:
   radarr:
-  restart: unless-stopped
-  ports:
-    - 7878:7878
-  volumes:
-    - /mnt/docker/radarr/config:/config
+    restart: unless-stopped
+    ports:
+      - 7878:7878
+    volumes:
+      - /mnt/docker/radarr/config:/config
     #- <\path/to/movies>:/movies
     #- <\path/to/downloadclient-downloads>:/downloads
-  environment:
-    - PUID=1000
-    - PGID=1000
-    - TZ=America/Los_Angeles
-  image: linuxserver/radarr
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=America/Los_Angeles
+    image: linuxserver/radarr
