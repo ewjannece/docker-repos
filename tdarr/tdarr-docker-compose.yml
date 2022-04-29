@@ -25,3 +25,4 @@ services:
       - /mnt/docker/tdarr/logs:/app/logs
       - /media/NAS/Tdarr-media-docker:/media
       - /media/NAS/Tdarr-cache-docker:/temp
+      - /media/NAS/Tdarr-output-docker:/output
