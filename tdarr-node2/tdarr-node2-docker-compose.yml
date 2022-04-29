@@ -2,7 +2,8 @@ version: "3.8"
 
 networks:
   tdarr-node-network:    
-    driver: overlay
+    default
+      driver: overlay
 
 services:
   tdarr-node2:
@@ -15,7 +16,7 @@ services:
       - PUID=1000
       - PGID=1000
       - UMASK_SET=002
-      - serverIP=tdarr
+      - serverIP=tdarr2
       - serverPort=9266
     volumes:
       - /mnt/docker/tdarr-node2/configs:/app/configs
