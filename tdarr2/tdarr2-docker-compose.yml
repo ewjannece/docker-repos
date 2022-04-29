@@ -11,18 +11,18 @@ services:
     networks:
       - tdarr-node-network
     ports:
-      - 8265:8265 # webUI port
-      - 8266:8266 # server port
-      - 8267:8267 # Internal node port
-      - 8268:8268 # Example extra node port
+      - 9265:8265 # webUI port
+      - 9266:8266 # server port
+      - 9267:8267 # Internal node port
+      - 9268:8268 # Example extra node port
     environment:
       - TZ=America/Los_Angeles
       - PUID=1000
       - PGID=1000
       - UMASK_SET=002
       - serverIP=0.0.0.0
-      - serverPort=8266
-      - webUIPort=8265
+      - serverPort=9266
+      - webUIPort=9265
       - internalNode=true
       - nodeID=DockerNode
     volumes:
