@@ -15,3 +15,6 @@ services:
       - PGID=1000
       - TZ=America/Los_Angeles
     image: linuxserver/radarr:latest
+    networks:
+      piracy:
+        driver: overlay
