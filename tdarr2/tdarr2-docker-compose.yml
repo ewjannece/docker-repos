@@ -1,15 +1,14 @@
 version: "3.4"
 
 networks:
-  tdarr-node-network:    
-    driver: overlay
+    default:
+        external:
+            name: tdarrnodes_tdarr-network
 
 services:
   tdarr2:
     image: ghcr.io/haveagitgat/tdarr:latest
     restart: unless-stopped
-    networks:
-      - tdarr-node-network
     ports:
       - 9265:9265 # webUI port
       - 9266:9266 # server port
