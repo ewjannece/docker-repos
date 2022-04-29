@@ -15,6 +15,3 @@ services:
       - PGID=1000
       - TZ=America/Los_Angeles
     image: linuxserver/sonarr:latest
-  networks:
-    piracy:
-      driver: overlay
