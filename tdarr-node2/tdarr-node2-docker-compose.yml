@@ -1,0 +1,24 @@
+version: "3.8"
+
+networks:
+  tdarr-node-network:    
+    driver: overlay
+
+services:
+  tdarr-node2:
+    image: ghcr.io/haveagitgat/tdarr_node:latest
+    restart: unless-stopped
+    networks:
+      - tdarr-node-network
+    environment:
+      - TZ=America/Los_Angeles
+      - PUID=1000
+      - PGID=1000
+      - UMASK_SET=002
+      - serverIP=tdarr
+      - serverPort=8266
+    volumes:
+      - /mnt/docker/tdarr-node2/configs:/app/configs
+      - /mnt/docker/tdarr-node2/logs:/app/logs
+      - /media/NAS/Tdarr-media-docker2:/media
+      - /media/NAS/Tdarr-cache-docker2:/temp
