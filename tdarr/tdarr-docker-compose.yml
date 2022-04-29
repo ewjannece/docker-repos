@@ -18,7 +18,7 @@ services:
       - serverPort=8266
       - webUIPort=8265
       - internalNode=true
-      - nodeID=MyInternalNode
+      - nodeID=DockerNode
     volumes:
       - /mnt/docker/tdarr/server:/app/server
       - /mnt/docker/tdarr/configs:/app/configs
