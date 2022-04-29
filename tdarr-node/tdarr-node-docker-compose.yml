@@ -1,7 +1,7 @@
 version: "3.8"
 
 networks:
-  tdarr-network:    
+  tdarr-node-network:    
     driver: overlay
 
 services:
@@ -9,7 +9,7 @@ services:
     image: ghcr.io/haveagitgat/tdarr_node:latest
     restart: unless-stopped
     networks:
-      - tdarr_default
+      - tdarr-node-network
     environment:
       - TZ=America/Los_Angeles
       - PUID=1000
