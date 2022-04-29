@@ -9,6 +9,8 @@ services:
       - 8266:8266 # server port
       - 8267:8267 # Internal node port
       - 8268:8268 # Example extra node port
+    networks:
+      - tdarr-network
     environment:
       - TZ=America/Los_Angeles
       - PUID=1000
