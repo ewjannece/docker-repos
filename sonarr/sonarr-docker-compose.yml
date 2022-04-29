@@ -2,8 +2,6 @@ version: '3'
 services:
   sonarr:
     restart: unless-stopped
-    networks:
-      - piracy
     ports:
       - 8989:8989
     volumes:

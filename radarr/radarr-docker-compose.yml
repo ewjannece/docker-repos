@@ -2,8 +2,6 @@ version: '3'
 services:
   radarr:
     restart: unless-stopped
-    networks:
-      - piracy
     ports:
       - 7887:7878
     volumes:
