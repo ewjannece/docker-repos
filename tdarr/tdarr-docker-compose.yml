@@ -40,7 +40,7 @@ services:
       - PGID=1000
       - UMASK_SET=002
       - nodeID=MainNode
-      - serverIP=0.0.0.0
+      - serverIP=tdarr
       - serverPort=8266
     volumes:
       - /mnt/docker/tdarr-node/configs:/app/configs
