@@ -4,7 +4,7 @@ services:
   image: ghcr.io/haveagitgat/tdarr_node:latest
   restart: unless-stopped
   networks:
-    - tdarr-network
+    - tdarr_default
   environment:
     - TZ=America/Los_Angeles
     - PUID=1000
