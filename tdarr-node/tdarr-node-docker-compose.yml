@@ -4,13 +4,12 @@ services:
     container_name: tdarr-node
     image: ghcr.io/haveagitgat/tdarr_node:latest
     restart: unless-stopped
-    network_mode: service:tdarr
     environment:
       - TZ=America/Los_Angeles
       - PUID=1000
       - PGID=1000
       - UMASK_SET=002
-      - nodeID=MainNode
+      - nodeID=SideNode
       - serverIP=tdarr
       - serverPort=8266
     volumes:
