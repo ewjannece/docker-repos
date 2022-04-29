@@ -11,10 +11,10 @@ services:
     networks:
       - tdarr-node-network
     ports:
-      - 9265:8265 # webUI port
-      - 9266:8266 # server port
-      - 9267:8267 # Internal node port
-      - 9268:8268 # Example extra node port
+      - 9265:9265 # webUI port
+      - 9266:9266 # server port
+      - 9267:9267 # Internal node port
+      - 9268:9268 # Example extra node port
     environment:
       - TZ=America/Los_Angeles
       - PUID=1000
