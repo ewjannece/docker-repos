@@ -5,10 +5,6 @@ networks:
         external:
             name: whatwhat
 
-volumes:
-  node-config:
-    per_container: true
-
 services:
   tdarr-node2:
     image: ghcr.io/haveagitgat/tdarr_node:latest
@@ -21,7 +17,7 @@ services:
       - serverIP=tdarr2
       - serverPort=9266
     volumes:
-      - node-config:/app/configs
+      - tmpfs:/app/configs
       - /mnt/docker/tdarr-node2/logs:/app/logs
       - /media/NAS/Tdarr-media-docker2:/media
       - /media/NAS/Tdarr-cache-docker2:/temp
