@@ -1,5 +1,9 @@
 version: "3.8"
 
+networks:
+  tdarr-network:    
+    driver: overlay
+
 services:
   tdarr-node:
     image: ghcr.io/haveagitgat/tdarr_node:latest
