@@ -1,7 +1,6 @@
 version: "3.4"
-services:
-  tdarr-node:
-    container_name: tdarr-node
+  services:
+    tdarr-node:
     image: ghcr.io/haveagitgat/tdarr_node:latest
     restart: unless-stopped
     networks:
