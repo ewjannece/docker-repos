@@ -24,7 +24,7 @@ services:
       - serverPort=9266
 
     volumes:
-      - /mnt/docker/tdarr-node2/logs:/app/logs
+#      - /mnt/docker/tdarr-node2/logs:/app/logs
       - /media/NAS/Tdarr-media-docker2:/media
       - /media/NAS/Tdarr-cache-docker2:/temp
     tmpfs:
