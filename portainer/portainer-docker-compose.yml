@@ -1,0 +1,25 @@
+version: "3.9"
+
+services:
+  portainer-stacked:
+    image: portainer/portainer-ce:latest
+    #container_name: portainer-docker-compose
+    command: -H unix:///var/run/docker.sock
+    ports:
+      - "9004:9000"
+      - "8004:8000"
+      - "9444:9443"
+    volumes:
+      - "/var/run/docker.sock:/var/run/docker.sock"
+      - "portainer_data_swarm:/data:rw"
+    restart: always
+
+  portainer-agent:
+    image: portainer/agent:latest
+    container_name: portainer-agent
+    volumes:
+      - "/var/run/docker.sock:/var/run/docker.sock"
+      - "/var/lib/docker/volumes:/var/lib/docker/volumes"
+
+volumes:
+  portainer_data_swarm:
