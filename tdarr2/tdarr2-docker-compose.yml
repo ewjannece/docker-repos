@@ -54,7 +54,7 @@ services:
       - PUID=1000
       - PGID=1000
       - UMASK_SET=002
-      - serverIP=tdarr2
+      - serverIP=tdarr
       - serverPort=9266
     networks:
       - tdarr
