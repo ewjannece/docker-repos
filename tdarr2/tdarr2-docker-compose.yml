@@ -3,10 +3,10 @@ version: "3.4"
 networks:
     default:
         external:
-            name: whatwhat
+            name: tdarr
 
 services:
-  tdarr2:
+  tdarr-wui:
     image: ghcr.io/haveagitgat/tdarr:latest
     restart: unless-stopped
     ports:
@@ -31,3 +31,28 @@ services:
       - /media/NAS/Tdarr-media-docker2:/media
       - /media/NAS/Tdarr-cache-docker2:/temp
       - /media/NAS/Tdarr-output-docker2:/output
+
+
+  tdarr-node:
+    image: ghcr.io/haveagitgat/tdarr_node:latest
+    restart: unless-stopped
+    environment:
+      - TZ=America/Los_Angeles
+      - PUID=1000
+      - PGID=1000
+      - UMASK_SET=002
+      - serverIP=tdarr2
+      - serverPort=9266
+
+    volumes:
+#      - /mnt/docker/tdarr-node2/logs:/app/logs
+      - /media/NAS/Tdarr-media-docker2:/media
+      - /media/NAS/Tdarr-cache-docker2:/temp
+    tmpfs:
+      - /app/configs
+      - /app/logs
+#volumes:
+#  tmpfsconfig:
+#    driver_opts:
+#      type: tmpfs
+#      device: tmpfs
