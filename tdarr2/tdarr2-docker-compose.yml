@@ -1,5 +1,4 @@
 version: "3.8"
-
 services:
   tdarr-wui:
     image: ghcr.io/haveagitgat/tdarr:latest
@@ -29,25 +28,25 @@ services:
       - /media/NAS/Tdarr-cache-docker2:/temp
       - /media/NAS/Tdarr-output-docker2:/output
 
-tdarr-node:
-  image: ghcr.io/haveagitgat/tdarr_node:latest
-  restart: unless-stopped
-  environment:
-    - TZ=America/Los_Angeles
-    - PUID=1000
-    - PGID=1000
-    - UMASK_SET=002
-    - serverIP=tdarr_network
-    - serverPort=9266
-  networks:
-    - nodes
-  volumes:
+  tdarr-node:
+    image: ghcr.io/haveagitgat/tdarr_node:latest
+    restart: unless-stopped
+    environment:
+      - TZ=America/Los_Angeles
+      - PUID=1000
+      - PGID=1000
+      - UMASK_SET=002
+      - serverIP=tdarr_network
+      - serverPort=9266
+    networks:
+      - nodes
+    volumes:
 #      - /mnt/docker/tdarr-node2/logs:/app/logs
-    - /media/NAS/Tdarr-media-docker2:/media
-    - /media/NAS/Tdarr-cache-docker2:/temp
-  tmpfs:
-    - /app/configs
-    - /app/logs
+      - /media/NAS/Tdarr-media-docker2:/media
+      - /media/NAS/Tdarr-cache-docker2:/temp
+    tmpfs:
+      - /app/configs
+      - /app/logs
 
 #volumes:
 #  tmpfsconfig:
