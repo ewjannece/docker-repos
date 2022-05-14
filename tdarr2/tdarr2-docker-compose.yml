@@ -30,13 +30,13 @@ services:
       - webUIPort=9265
       - internalNode=true
       - nodeID=DockerNode
-  volumes:
-    - /mnt/docker/tdarr2/server:/app/server
-    - /mnt/docker/tdarr2/configs:/app/configs
-    - /mnt/docker/tdarr2/logs:/app/logs
-    - /media/NAS/Tdarr-media-docker2:/media
-    - /media/NAS/Tdarr-cache-docker2:/temp
-    - /media/NAS/Tdarr-output-docker2:/output
+    volumes:
+      - /mnt/docker/tdarr2/server:/app/server
+      - /mnt/docker/tdarr2/configs:/app/configs
+      - /mnt/docker/tdarr2/logs:/app/logs
+      - /media/NAS/Tdarr-media-docker2:/media
+      - /media/NAS/Tdarr-cache-docker2:/temp
+      - /media/NAS/Tdarr-output-docker2:/output
 
 
   tdarr-node:
