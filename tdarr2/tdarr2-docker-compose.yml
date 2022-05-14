@@ -1,6 +1,6 @@
 version: "3.8"
 services:
-  tdarr-wui:
+  tdarr-server:
     image: ghcr.io/haveagitgat/tdarr:latest
     restart: unless-stopped
     networks:
@@ -36,7 +36,7 @@ services:
       - PUID=1000
       - PGID=1000
       - UMASK_SET=002
-      - serverIP=tdarr_nodes
+      - serverIP=tdarr-server
       - serverPort=8266
       - nodeID=DockerNode
     networks:
