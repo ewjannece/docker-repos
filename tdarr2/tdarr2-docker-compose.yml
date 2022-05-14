@@ -18,7 +18,7 @@ services:
       - serverIP=0.0.0.0
       - serverPort=8266
       - webUIPort=8265
-      - internalNode=true
+      #- internalNode=true
       - nodeID=Dockerserver
     volumes:
       - /mnt/docker/tdarr2/server:/app/server
@@ -28,7 +28,7 @@ services:
       - /media/NAS/Tdarr-cache-docker2:/temp
       - /media/NAS/Tdarr-output-docker2:/output
 
-  tdarr-node:
+  tdarr-nodes:
     image: ghcr.io/haveagitgat/tdarr_node:latest
     restart: unless-stopped
     environment:
