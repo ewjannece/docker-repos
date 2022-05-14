@@ -1,5 +1,8 @@
 # Run "docker stack deploy -c portainer-agent-stack.yml portainer" to start it in swarm mode
-
+# Run "docker service update --image portainer/portainer-ce:2.9.3 --publish-add 9443:9443 --force portainer_portainer"
+# to update portainer
+# Run "docker service update --image portainer/agent:2.9.3 --force portainer_agent "
+# To update portainer agents
 version: '3.2'
 
 services:
