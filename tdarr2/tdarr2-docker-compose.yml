@@ -15,6 +15,8 @@ services:
   tdarr-wui:
     image: ghcr.io/haveagitgat/tdarr:latest
     restart: unless-stopped
+    networks:
+      - tdarr
     ports:
       - 9265:9265 # webUI port
       - 9266:9266 # server port
@@ -49,7 +51,8 @@ services:
       - UMASK_SET=002
       - serverIP=tdarr2
       - serverPort=9266
-
+    networks:
+      - tdarr
     volumes:
 #      - /mnt/docker/tdarr-node2/logs:/app/logs
       - /media/NAS/Tdarr-media-docker2:/media
