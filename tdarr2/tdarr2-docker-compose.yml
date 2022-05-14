@@ -1,9 +1,14 @@
 version: "3.4"
 
 networks:
-    default:
-        external:
-            name: tdarr
+  tdarr:
+    driver: overlay
+    attachable: true
+
+#networks:
+#    default:
+#        external:
+#            name: tdarr
 
 #networks:
 #    tdarr:
