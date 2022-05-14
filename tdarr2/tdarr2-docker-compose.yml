@@ -39,7 +39,7 @@ services:
       #serverIP needs to equal the service name
       - serverIP=tdarr-server
       - serverPort=8266
-      - nodeID=DockerNode
+      #- nodeID=DockerNode
     networks:
       - nodes
     volumes:
