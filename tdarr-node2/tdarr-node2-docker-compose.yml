@@ -30,3 +30,7 @@ services:
     tmpfs:
       - /app/configs
       - /app/logs
+networks:
+  tdarr:
+    driver: overlay
+    attachable: true
