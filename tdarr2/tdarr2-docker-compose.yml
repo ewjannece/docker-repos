@@ -19,7 +19,7 @@ services:
       - serverPort=9266
       - webUIPort=9265
       - internalNode=true
-      - nodeID=DockerNode
+      - nodeID=Dockerserver
     volumes:
       - /mnt/docker/tdarr2/server:/app/server
       - /mnt/docker/tdarr2/configs:/app/configs
@@ -36,8 +36,9 @@ services:
       - PUID=1000
       - PGID=1000
       - UMASK_SET=002
-      - serverIP=nodes
+      - serverIP=tdarr_nodes
       - serverPort=9266
+      - nodeID=DockerNode
     networks:
       - nodes
     volumes:
