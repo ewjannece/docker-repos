@@ -1,7 +1,7 @@
 version: "3.4"
 
 networks:
-  tdarr:
+  network:
     driver: overlay
     attachable: true
 
@@ -21,7 +21,7 @@ services:
     image: ghcr.io/haveagitgat/tdarr:latest
     restart: unless-stopped
     networks:
-      - tdarr
+      - tdarr_network
     ports:
       - 9265:9265 # webUI port
       - 9266:9266 # server port
@@ -54,7 +54,7 @@ services:
       - PUID=1000
       - PGID=1000
       - UMASK_SET=002
-      - serverIP=tdarr
+      - serverIP=tdarr_network
       - serverPort=9266
     networks:
       - tdarr
