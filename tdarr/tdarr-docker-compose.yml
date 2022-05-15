@@ -21,9 +21,9 @@ services:
       #- internalNode=true
       - nodeID=Dockerserver
     volumes:
-      - /mnt/docker/tdarr2/server:/app/server
-      - /mnt/docker/tdarr2/configs:/app/configs
-      - /mnt/docker/tdarr2/logs:/app/logs
+      - /mnt/docker/tdarr/server:/app/server
+      - /mnt/docker/tdarr/configs:/app/configs
+      - /mnt/docker/tdarr/logs:/app/logs
       - /media/NAS/Tdarr-media-docker2:/media
       - /media/NAS/Tdarr-cache-docker2:/temp
       - /media/NAS/Tdarr-output-docker2:/output
